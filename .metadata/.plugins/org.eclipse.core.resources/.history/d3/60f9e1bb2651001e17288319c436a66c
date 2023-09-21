@@ -1,0 +1,49 @@
+package org.fadhilacademy;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.time.Duration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+
+import org.fadhilacademy.pageObjects.android.CartPage;
+import org.fadhilacademy.pageObjects.android.FormPage;
+import org.fadhilacademy.pageObjects.android.ProductCatalogue;
+import org.fadhilacademy.utils.AppiumUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+
+public class TCOBA extends BaseTestEcommerce {
+	
+	@Test(dataProvider="getData")
+	public void ValidateErrorRRR(HashMap<String, String> input) throws InterruptedException {
+		
+		FormPage form = new FormPage(android);
+		form.pressLoginButton();
+		String toast = android.findElement(By.xpath("//android.widget.Toast[1]")).getAttribute("name");	
+		Assert.assertEquals(toast, "Please enter your name");
+		Thread.sleep(10000);
+
+	}
+	
+	@DataProvider
+	public Object[][] getData() throws IOException {
+		List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir")+"\\src\\test\\java\\org\\fadhilacademy\\TestData\\eCommerce.json");
+		return new Object[][] {{data.get(0)}};
+		
+	}
+
+}

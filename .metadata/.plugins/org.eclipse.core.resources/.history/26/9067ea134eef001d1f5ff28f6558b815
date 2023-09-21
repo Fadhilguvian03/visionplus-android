@@ -1,0 +1,3 @@
+module LearnJavaProgramming {
+	requires org.seleniumhq.selenium.grid;
+}

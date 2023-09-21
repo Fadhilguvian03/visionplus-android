@@ -1,0 +1,49 @@
+package org.fadhilacademy.pageObjects.android;
+
+import org.fadhilacademy.utils.AndroidGesture;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPageVisionPlus extends AndroidGesture{
+
+	AndroidDriver android;
+	
+	public LoginPageVisionPlus(AndroidDriver android) {
+		super(android);
+		this.android = android;
+		PageFactory.initElements(new AppiumFieldDecorator(android), this);
+	}
+	
+	@AndroidFindBy(id="com.zte.iptvclient.android.idmnc:id/tv_skip_intro")
+	private WebElement skipButton;
+	
+	@AndroidFindBy(id="com.zte.iptvclient.android.idmnc:id/layout_showcase")
+	private WebElement pressMainPage;
+	
+	@AndroidFindBy(id="com.zte.iptvclient.android.idmnc:id/btn_next")
+	private WebElement nextButton;
+	
+	@AndroidFindBy(xpath="(//android.widget.ImageView)[3]")
+	private WebElement dot;
+	
+	
+	private WebElement lainnyaButton;
+	
+	public void clickDot() {
+		dot.click();
+	}
+	
+	public void toLoginPage() throws InterruptedException {
+		Thread.sleep(3000);
+		nextButton.click();
+		skipButton.click();
+		pressMainPage.click();
+		Thread.sleep(3000);
+	}
+	
+	
+}

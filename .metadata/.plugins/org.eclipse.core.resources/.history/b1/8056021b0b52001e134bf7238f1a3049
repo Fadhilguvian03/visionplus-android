@@ -1,0 +1,14 @@
+package org.fadhilacademy.pageObjects.android;
+
+import org.fadhilacademy.utils.AndroidGesture;
+
+public class LainnyaMenuPage extends AndroidGesture{
+	
+	AndroidDriver android;
+	
+	public LainnyaMenuPage(AndroidDriver android) {
+		super(android);
+		this.android = android;
+	}
+
+}

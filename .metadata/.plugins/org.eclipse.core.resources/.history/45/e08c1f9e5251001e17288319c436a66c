@@ -1,0 +1,20 @@
+package org.fadhilacademy;
+
+import org.fadhilacademy.pageObjects.android.LoginPageVisionPlus;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class TC_LoginVisionPlus extends BaseTestEcommerce{
+
+	AndroidDriver android;
+	
+	@Test
+	public void loginPage() throws InterruptedException{
+		LoginPageVisionPlus login = new LoginPageVisionPlus(android);
+		Thread.sleep(3000);
+		login.clickDot();
+		login.toLoginPage("email");
+	}
+	
+}

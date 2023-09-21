@@ -1,0 +1,19 @@
+package org.fadhilacademy.pageObjects.android;
+
+import org.fadhilacademy.utils.AndroidGesture;
+import org.openqa.selenium.support.PageFactory;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
+public class HomePageVisionPlus extends AndroidGesture{
+
+	AndroidDriver android;
+	
+	public HomePageVisionPlus(AndroidDriver android) {
+		super(android);
+		this.android = android;
+		PageFactory.initElements(new AppiumFieldDecorator(android), this);
+	}
+	
+}

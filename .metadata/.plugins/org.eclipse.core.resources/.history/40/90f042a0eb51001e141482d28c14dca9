@@ -1,0 +1,22 @@
+package org.fadhilacademy;
+
+import org.fadhilacademy.pageObjects.android.LoginPageVisionPlus;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class TC_LoginVisionPlus extends BaseTestEcommerce{
+	
+	AndroidDriver android;
+	@Test
+	public void successLogin() throws InterruptedException{
+		LoginPageVisionPlus login = new LoginPageVisionPlus(android);
+		Thread.sleep(3000);
+		login.clickDot();
+		test.pass("berhasil click dot");
+		getScreenshotPath("successLogin", android);
+	}
+	
+}

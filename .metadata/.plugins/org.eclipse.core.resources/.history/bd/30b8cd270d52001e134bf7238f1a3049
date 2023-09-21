@@ -1,0 +1,33 @@
+package org.fadhilacademy;
+
+import org.fadhilacademy.pageObjects.android.HomePageVisionPlus;
+import org.fadhilacademy.pageObjects.android.LainnyaMenuPage;
+import org.fadhilacademy.pageObjects.android.LoginPageVisionPlus;
+import org.fadhilacademy.pageObjects.android.PengaturanPage;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class TC_LoginVisionPlus extends BaseTestEcommerce{
+	
+	@Test
+	public void successLoginLogoutScript () throws InterruptedException{
+		HomePageVisionPlus homepage = new HomePageVisionPlus(android);
+		LoginPageVisionPlus login = new LoginPageVisionPlus(android);
+		Thread.sleep(3000);
+		homepage.lewatiButton();
+		homepage.lainnyaButton();
+		login.LoginVisionPlus("phone");
+		homepage.removePopupSub();
+		homepage.lainnyaButton();
+		Thread.sleep(3000);
+		LainnyaMenuPage lainnya = new LainnyaMenuPage(android);
+		lainnya.pengaturanLainnya();
+		PengaturanPage pengaturan = new PengaturanPage(android);
+		pengaturan.SignOut();
+		Thread.sleep(3000);
+	}
+	
+	
+	
+}

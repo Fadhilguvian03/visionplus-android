@@ -1,0 +1,22 @@
+package org.fadhilacademy;
+
+import org.fadhilacademy.pageObjects.android.LoginPageVisionPlus;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class TC_LoginVisionPlus extends BaseTestEcommerce{
+	
+	@Test
+	public void successLogin() throws InterruptedException{
+		LoginPageVisionPlus login = new LoginPageVisionPlus(android);
+		test.get().pass("Menuju ke menu Setting | System Setting | Reference Data Setting | Bank", MediaEntityBuilder.createScreenCaptureFromPath(filePathSc  + "_1.png").build());
+		Thread.sleep(3000);
+		login.clickDot();
+		login.LoginVisionPlus("email");
+	}
+	
+}

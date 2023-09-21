@@ -1,0 +1,22 @@
+package org.fadhilacademy.pageObjects.android;
+
+import org.fadhilacademy.utils.AndroidGesture;
+import org.openqa.selenium.support.PageFactory;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
+public class PengaturanPage extends AndroidGesture {
+
+    AndroidDriver android;
+	
+	public PengaturanPage(AndroidDriver android) {
+		super(android);
+		this.android = android;
+		PageFactory.initElements(new AppiumFieldDecorator(android), this);
+	}
+	
+	@AndroidFindBy(id="com.zte.iptvclient.android.idmnc:id/linear_action_signout")
+	private WebElement keluarButton;
+	
+}

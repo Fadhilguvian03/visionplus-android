@@ -1,0 +1,16 @@
+package org.fadhilacademy.pageObjects.android;
+
+import org.fadhilacademy.utils.AndroidGesture;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class HomePageVisionPlus extends AndroidGesture{
+
+	AndroidDriver android;
+	
+	public HomePageVisionPlus(AndroidDriver android) {
+		super(android);
+		
+	}
+	
+}

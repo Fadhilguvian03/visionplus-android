@@ -1,0 +1,26 @@
+package org.fadhilacademy;
+
+import java.io.IOException;
+
+import org.fadhilacademy.pageObjects.android.LoginPageVisionPlus;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class TC_LoginVisionPlus extends BaseTestEcommerce{
+	
+	@Test
+	public void successLogin() throws InterruptedException, IOException{
+		LoginPageVisionPlus login = new LoginPageVisionPlus(android);
+		Thread.sleep(3000);
+		test.pass("ii");
+		test.info("yesy");
+		login.clickDot();
+		test.log(Status.PASS, "berhasil");
+		extent.flush();
+	}
+	
+}

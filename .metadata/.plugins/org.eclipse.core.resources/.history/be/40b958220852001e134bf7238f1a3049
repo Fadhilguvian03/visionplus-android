@@ -1,0 +1,22 @@
+package org.fadhilacademy;
+
+import org.fadhilacademy.pageObjects.android.HomePageVisionPlus;
+import org.fadhilacademy.pageObjects.android.LoginPageVisionPlus;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class TC_LoginVisionPlus extends BaseTestEcommerce{
+	
+	@Test
+	public void successLoginScript () throws InterruptedException{
+		LoginPageVisionPlus login = new LoginPageVisionPlus(android);
+		Thread.sleep(3000);
+		login.LoginVisionPlus("phone");
+		HomePageVisionPlus homepage = new HomePageVisionPlus(android);
+		homepage.removePopupSub();
+	}
+	
+	
+	
+}

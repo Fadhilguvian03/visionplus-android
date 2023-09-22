@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.fadhilacademy.TC_Login.TC_LoginWrongPhoneNumber">
+      <class name="org.visionplus_android.TC_Homepage.TC_ScrollDownUp">
         <methods>
-          <include name="TC_LoginWrongPhoneNumber" invocation-numbers="0"/>
-          <include name="ConfigureAppium"/>
+          <include name="TC_ScrollDownUp"/>
           <include name="tearDown"/>
+          <include name="ConfigureAppium"/>
         </methods>
-      </class> <!-- org.fadhilacademy.TC_Login.TC_LoginWrongPhoneNumber -->
+      </class> <!-- org.visionplus_android.TC_Homepage.TC_ScrollDownUp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

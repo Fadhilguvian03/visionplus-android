@@ -32,10 +32,13 @@ public class TC_ScrollDownUp extends BaseTest{
 	homepage.clickBtnShowcaseOk();
 	test.pass("User berhasil Klik Button Showcase OK");
 	homepage.scrollDownNoParameter();
+	homepage.assertTextExploreByCategories();
     Thread.sleep(3000);
 	test.pass("user berhasil Scrolldown Homepage");
 	homepage.scrollUpNoParameter();
+	homepage.assertTextVisionPlusOriginal();
     Thread.sleep(3000);
+    test.pass("user berhasil Scrollup Homepage");
 	}
 	
 	

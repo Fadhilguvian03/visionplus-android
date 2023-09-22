@@ -3,6 +3,7 @@ package org.fadhilacademy.pageObjects.android;
 import org.fadhilacademy.utils.AndroidGesture;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -45,12 +46,26 @@ public class HomePageVisionPlus extends AndroidGesture{
 	@AndroidFindBy(id="com.zte.iptvclient.android.idmnc:id/tv_cluster")
 	private WebElement clickRandom;
 	
-	public void clickBtnShowcaseTvConnect() {
-		btnShowcaseTvConnect.click();
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Explore By Categories']")
+	private WebElement textExploreByCategories;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Vision+ Originals']")
+	private WebElement textVisionPlusOriginal;
+	
+	public void assertTextExploreByCategories() {
+		String actual = textExploreByCategories.getText();
+		String expected = "Explore By Categories";
+		Assert.assertEquals(actual, expected);
 	}
 	
-	public void clickRandom() {
-		clickRandom.click();
+	public void assertTextVisionPlusOriginal() {
+		String actual = textVisionPlusOriginal.getText();
+		String expected = "Vision+ Originals";
+		Assert.assertEquals(actual, expected);
+	}
+	
+	public void clickBtnShowcaseTvConnect() {
+		btnShowcaseTvConnect.click();
 	}
 	
 	public void clickBtnSelengkapnya() {

@@ -82,7 +82,7 @@ public class BaseTest {
 			
 		android = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 	}
 	
 	//function agar appium ipAddress dan port tidak hardcode

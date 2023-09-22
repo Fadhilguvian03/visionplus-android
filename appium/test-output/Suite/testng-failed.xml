@@ -8,9 +8,9 @@
     <classes>
       <class name="org.fadhilacademy.TC_Login.TC_SuccessLoginSignOut">
         <methods>
-          <include name="successLoginLogoutScript"/>
-          <include name="tearDown"/>
           <include name="ConfigureAppium"/>
+          <include name="TC_SuccessLoginSignOut" invocation-numbers="0"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- org.fadhilacademy.TC_Login.TC_SuccessLoginSignOut -->
     </classes>

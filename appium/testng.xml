@@ -9,6 +9,9 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="org.fadhilacademy.TC_Login.TC_SuccessLoginSignOut"/>
+      <class name="org.fadhilacademy.TC_Login.TC_LoginWrongPhoneNumber"/>
+      <class name="org.fadhilacademy.TC_Login.TC_LoginWrongPhonePassword"/>
+      <class name="org.fadhilacademy.TC_Homepage.TC_ScrollDownUp"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

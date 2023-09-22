@@ -1,33 +1,41 @@
 package org.fadhilacademy.TC_Login;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
 import org.fadhilacademy.BaseTest;
 import org.fadhilacademy.pageObjects.android.HomePageVisionPlus;
 import org.fadhilacademy.pageObjects.android.LoginPageVisionPlus;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class TC_LoginWrongPhonePassword extends BaseTest {
 
-	@Test
-	public void TC_LoginWrongPhonePassword() throws InterruptedException {
+	@Test(dataProvider="getData")
+	public void TC_LoginWrongPhonePassword(HashMap<String, String> input) throws InterruptedException {
 		HomePageVisionPlus homepage = new HomePageVisionPlus(android);
 		LoginPageVisionPlus login = new LoginPageVisionPlus(android);
-		Thread.sleep(3000);
 		homepage.lewatiButton();
 		test.info("User berhasil Klik skip button");
-		Thread.sleep(3000);
 		homepage.lainnyaButton();
 		test.info("User berhasil Klik menu Lainnya");
-		Thread.sleep(3000);
 		login.clickMasukButton();
 		test.pass("User berhasil Klik Button Masuk");
-		Thread.sleep(3000);
-		login.inputPhoneNumber("088219626865");
+		login.inputPhoneNumber(input.get("phone"));
 		test.pass("User berhasil input Phone Number");
 		login.clickButtonContinue();
-		login.inputPhonePassword("ngasal");
+		login.inputPhonePassword(input.get("password"));
 		login.clickButtonContinue();
 		login.assertWrongPhonePassword();
 		test.pass("hasil Assert sesuai");
+		
+	}
+	
+	@DataProvider
+	public Object[][] getData() throws IOException {
+		List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir")+"/src/test/java/org/fadhilacademy/TestData/LoginTestdata/TC_loginWrongPhonePassword.json");
+		return new Object[][] {{data.get(0)}};
 		
 	}
 	
